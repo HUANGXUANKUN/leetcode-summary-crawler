@@ -115,14 +115,17 @@ class Leetcode:
             list = self.sort_dict[title]
             if len(list) > 0:
                 md += '## {}\n'.format(title)
+                md += '| # | Problem Code | Submission | Difficulty | Accuracy |\
+                        |:---:|:---:|:---:|:---:|:---:|'
                 for problem in list:
-                    md += '|{id}|[{title}]({problem_url})|[{lang}]({submission_url})|{difficulty}|'.format(
+                    md += '|{id}|[{title}]({problem_url})|[{lang}]({submission_url})|{difficulty}| {accuracy}|'.format(
                         id=problem['id'],
                         title=problem['title'],
                         lang=problem['lang'].capitalize(),
                         problem_url=self.base_url + '/problems/' + problem['slug'],
                         submission_url=self.base_url + problem['submission_url'],
                         difficulty=problem['difficulty'],
+                        accuracy=problem['accuracy']
                     )
 
         with open('README.md', 'w') as f:
