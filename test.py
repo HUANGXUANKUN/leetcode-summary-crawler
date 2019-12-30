@@ -34,9 +34,12 @@ HEADERS = {
     'Connection': 'keep-alive',
     'Content-Type': 'application/x-www-form-urlencoded',
     'Host': 'leetcode.com',
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
     # NOQA
 }
+
+TODAY_T = time.time()
+
 CONFIG = get_config_from_file(CONFIG_FILE)
 
 
@@ -45,10 +48,9 @@ class Leetcode:
     def __init__(self):
         self.problems = {}
         self.acDict = {}
-        self.submissions = []
+        self.sort_dict = {}
         self.num_solved = 0
         self.num_total = 0
-        self.num_lock = 0
         self.base_url = BASE_URL
         self.session = requests.Session()
         self.session.headers.update(HEADERS)
@@ -56,7 +58,8 @@ class Leetcode:
         self.cookies = None
 
     def login(self):
-        logging.info('logging in {}'.format(CONFIG['username']))
+        logger = logging.getLogger(__name__)
+        logger.info('logging in {}'.format(CONFIG['username']))
         LOGIN_URL = self.base_url + '/accounts/login/'  # NOQA
         if not CONFIG['username'] or not CONFIG['password']:
             raise Exception(
@@ -83,13 +86,11 @@ class Leetcode:
 
         driver.find_element_by_name('login').send_keys(usr)
         driver.find_element_by_name('password').send_keys(pwd)
-        # driver.find_element_by_id('id_remember').click()
         btns = driver.find_elements_by_tag_name('button')
-        # print(btns)
         submit_btn = btns[1]
         submit_btn.click()
 
-        time.sleep(5)
+        time.sleep(2)
         webdriver_cookies = driver.get_cookies()
         driver.close()
         if 'LEETCODE_SESSION' not in [
@@ -107,70 +108,86 @@ class Leetcode:
 
     def get_problems(self):
         url = self.base_url + "/api/problems/all/"
-        time.sleep(5)
+        time.sleep(3)
         resp = self.session.get(url, timeout=10)
 
         question_list = json.loads(resp.content.decode('utf-8'))
+        self.num_solved = question_list['num_solved']
+        self.num_total = question_list['num_total']
+
         for question in question_list['stat_status_pairs']:
             # 'ac', 'notac' or 'none'
             question_info = {}
             question_id = question['stat']['question_id']
             question_info['status'] = question['status']
             question_info['slug'] = question['stat']['question__title_slug']
-            question_info['title'] = question['stat']['question_title']
+            question_info['title'] = question['stat']['question__title']
             # difficulty，1 easy，2 medium，3 hard
             question_info['difficulty'] = question['difficulty']['level']
             # only record ac submission
             if question_info['status'] == 'ac':
                 self.acDict[question_id] = question_info
-
         print(self.acDict)
 
-    def get_timestamp(self):
+    def get_submissions(self):
+        logger = logging.getLogger(__name__)
         for question_id in self.acDict:
-            question_slug = self.acDict[question_id]
-            timestamp = self.get_submission(question_slug)
-            self.acDict[question_id][timestamp] = timestamp
-
+            question_slug = self.acDict[question_id]['slug']
+            hasUpdated = self._get_timestamp_url(question_slug, question_id)
+            if not hasUpdated:
+                logger.warning('Fails to get submission of problem: {}'.format(self.acDict[question_id]['title']))
         print(self.acDict)
 
-    def get_submission(self, slug):
-        url = self.base_url + "/graphql"
+    def _get_timestamp_url(self, slug, id):
+        logger = logging.getLogger(__name__)
+        url = "https://leetcode.com/graphql"
         params = {'operationName': "Submissions",
                   'variables': {"offset": 0, "limit": 20, "lastKey": '', "questionSlug": slug},
                   'query': '''query Submissions($offset: Int!, $limit: Int!, $lastKey: String, $questionSlug: String!) {
-                    submissionList(offset: $offset, limit: $limit, lastKey: $lastKey, questionSlug: $questionSlug) {
-                    lastKey
-                    hasNext
-                    submissions {
-                        id
-                        statusDisplay
-                        lang
-                        runtime
-                        timestamp
-                        url
-                        isPending
-                        __typename
-                    }
-                    __typename
-                }
-            }'''
+                                submissionList(offset: $offset, limit: $limit, lastKey: $lastKey, questionSlug: $questionSlug) {
+                                lastKey
+                                hasNext
+                                submissions {
+                                    id
+                                    statusDisplay
+                                    lang
+                                    runtime
+                                    timestamp
+                                    url
+                                    isPending
+                                    __typename
+                                }
+                                __typename
+                            }
+                        }'''
                   }
 
         json_data = json.dumps(params).encode('utf8')
-        # headers = {'User-Agent': HEADERS['User-Agent'], 'Connection': 'keep-alive',
-        #            'Referer': 'https://leetcode.com/accounts/login/',
-        #            "Content-Type": "application/json"}
-        resp = self.session.post(url, data=json_data, timeout=10)
-        print(resp)
-        content = resp.json()
-        for submission in content['data']['submissionList']['submissions']:
-            status = submission['status_display']
+        headers = {'User-Agent': HEADERS['User-Agent'], 'Connection': 'keep-alive',
+                   'Referer': 'https://leetcode.com/accounts/login/',
+                   "Content-Type": "application/json"}
+        resp = self.session.post(url, data=json_data, headers=headers, timeout=20)
+        submissions = resp.json()['data']['submissionList']['submissions']
+        hasUpdated = False;
+        acCount = 0
+        for submission in submissions:
+            status = submission['statusDisplay']
             print(status)
             timestamp = submission['timestamp']
+            print(timestamp)
+            url = submission['url']
+            print(url)
             if status == 'Accepted':
-                return timestamp
-        return 1
+                acCount += 1
+                if not hasUpdated:
+                    self.acDict[id]['timestamp'] = timestamp
+                    self.acDict[id]['submission_url'] = url
+                    hasUpdated = True
+        # update accuracy of all submissions
+        self.acDict[id]['accuracy'] = (acCount * 100) / len(submissions)
+        if not hasUpdated:
+            return False
+        return True
 
     @property
     def is_login(self):
@@ -193,6 +210,40 @@ class Leetcode:
         data = json.loads(r.text)
         return 'user_name' in data and data['user_name'] != ''
 
+    def write_readme(self):
+        self._sort_by_timestamp()
+
+        pass;
+
+    def _sort_by_timestamp(self):
+        DAY_T = 3600 * 24
+        WEEK_T = 7 * DAY_T
+        TIME_TITLES = ['1w', '2w', '3w', '4w', '8w', '12w', '24w', '48w']
+        TIME_LIST = [1 * WEEK_T, 2 * WEEK_T, 3 * WEEK_T, 4 * WEEK_T, 8 * WEEK_T, 12 * WEEK_T, 24 * WEEK_T, 48 * WEEK_T]
+        sorted_dict = {}
+
+        # Initialize list in sorted_dict
+        for title in TIME_TITLES:
+            sorted_dict[title] = []
+
+        # sort the question into sorted_dict by timestamp
+        for question in self.acDict:
+            timestamp = question['timestamp']
+            diff = TODAY_T - timestamp
+            print(diff / (24 * 3600))
+            less_than_a_year = False
+            for i in range(len(TIME_TITLES)):
+                print(TIME_TITLES)
+                if diff < TIME_LIST[i]:
+                    sorted_dict[TIME_TITLES[i]].append(question)
+                    less_than_a_year = True
+                    break
+
+            if not less_than_a_year:
+                sorted_dict['rest'].append(question)
+
+        self.sort_dict = sorted_dict
+
 
 def todo(leetcode):
     leetcode.login()
@@ -200,13 +251,14 @@ def todo(leetcode):
         leetcode.login()
     logging.info('Login successfully!')
     leetcode.get_problems()
-    leetcode.get_timestamp()
+    leetcode.get_submissions()
+    leetcode.write_readme()
 
 
 def main():
     logging.basicConfig(filename='log.log', level=logging.INFO)
-    logger = logging.getLogger("main")
-    logger.info('Master runs')
+    logger = logging.getLogger(__name__)
+    logger.info('Crawler starts')
     leetcode = Leetcode()
 
     while True:

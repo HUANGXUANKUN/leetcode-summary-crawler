@@ -21,191 +21,166 @@ from selenium import webdriver
 from collections import namedtuple, OrderedDict
 from leetcodeUtil import *
 
-HOME = Path.cwd()
-CONFIG_FILE = Path.joinpath(HOME, 'config.cfg')
-COOKIE_PATH = Path.joinpath(HOME, 'cookies.json')
-BASE_URL = 'https://leetcode.com'
-# If you have proxy, change PROXIES below
-PROXIES = None
-HEADERS = {
-    'Accept': '*/*',
-    'Accept-Encoding': 'gzip,deflate,sdch',
-    'Accept-Language': 'zh-CN,zh;q=0.8,gl;q=0.6,zh-TW;q=0.4',
-    'Connection': 'keep-alive',
-    'Content-Type': 'application/x-www-form-urlencoded',
-    'Host': 'leetcode.com',
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36',
-    # NOQA
-}
-CONFIG = get_config_from_file(CONFIG_FILE)
-
+TODAY_T = time.time()
+DAY_T = 3600 * 24
+WEEK_T = 7 * DAY_T
+TIME_TITLES = ['1w', '2w', '3w', '4w', '8w', '12w', '24w', '48w', 'rest']
+TIME_LIST = [1 * WEEK_T, 2 * WEEK_T, 3 * WEEK_T, 4 * WEEK_T, 8 * WEEK_T, 12 * WEEK_T, 24 * WEEK_T, 48 * WEEK_T,
+             sys.maxsize]
 
 class Leetcode:
 
     def __init__(self):
         self.problems = {}
         self.acDict = {}
-        self.submissions = []
+        self.sort_dict = {}
         self.num_solved = 0
         self.num_total = 0
-        self.num_lock = 0
-        self.base_url = BASE_URL
-        self.session = requests.Session()
-        self.session.headers.update(HEADERS)
-        self.session.proxies = PROXIES
-        self.cookies = None
+        self.base_url = 'https://leetcode.com'
 
-    def login(self):
-        logging.info('logging in {}'.format(CONFIG['username']))
-        LOGIN_URL = self.base_url + '/accounts/login/'  # NOQA
-        if not CONFIG['username'] or not CONFIG['password']:
-            raise Exception(
-                'Leetcode - Please input your username and password in config.cfg.'
+    def prepare_data(self):
+        self.num_solved = 134
+        self.num_total = 1388
+        acDict = {}
+
+        acDict[1377] = {'title': 'title 1',
+                        'slug': 'title 2',
+                        'accuracy': 45,
+                        'difficulty': 1,
+                        'url': '/submissions/detail/288978095',
+                        'timestamp': 1575462591,
+                        }
+
+        acDict[2] = {'title': 'two sum',
+                     'slug': 'two-sum',
+                     'accuracy': 45,
+                     'difficulty': 1,
+                     'url': '/submissions/detail/288978095',
+                     'timestamp': 1578469591,
+                     }
+
+        acDict[56] = {'title': 'two sum',
+                      'slug': 'two-sum',
+                      'accuracy': 45,
+                      'difficulty': 1,
+                      'url': '/submissions/detail/288978095',
+                      'timestamp': 1527462591,
+                      }
+
+        acDict[18] = {'title': 'two sum',
+                      'slug': 'two-sum',
+                      'accuracy': 45,
+                      'difficulty': 1,
+                      'url': '/submissions/detail/288978095',
+                      'timestamp': 1577417591,
+                      }
+
+        acDict[35] = {'title': 'two sum',
+                      'slug': 'two-sum',
+                      'accuracy': 45,
+                      'difficulty': 1,
+                      'url': '/submissions/detail/288978095',
+                      'timestamp': 1577492591,
+                      }
+        self.acDict = acDict
+
+    def write_readme(self):
+        self._sort_by_timestamp()
+        """Write Readme to current folder"""
+        md = '''# :pencil2: Leetcode Solved Summary
+                Update time:  {tm}
+                Auto created by [leetcode_generate](https://github.com/HUANGXUANKUN/leetcode-summary-generator)
+                I have solved **{num_solved}   /   {num_total}** problems
+                If you want to use this tool please follow this [User Guide](https://github.com/HUANGXUANKUN/leetcode-summary-generatorREADME.md)
+                If you have any question, please give me an [issue](https://github.com/HUANGXUANKUN/leetcode-summary-generator/issues).
+                '''\
+            .format(
+                tm=time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())),
+                num_solved=self.num_solved,
+                num_total=self.num_total,
             )
 
-        usr = CONFIG['username']
-        pwd = CONFIG['password']
-        # driver = webdriver.PhantomJS()
-        options = webdriver.ChromeOptions()
-        options.add_argument('headless')
-        options.add_argument('--disable-gpu')
-        executable_path = CONFIG.get('driverpath')
-        # driver = webdriver.Chrome(
-        #     chrome_options=options, executable_path=executable_path
-        # )
-        driver = webdriver.Chrome(
-            executable_path=executable_path
-        )
-        driver.get(LOGIN_URL)
+        # md += '\n'
+        # for item in self.items:
+        #     article = ''
+        #     if item.question__article__slug:
+        #         article = '[:memo:](https://leetcode.com/articles/{article}/)'.format(
+        #             article=item.question__article__slug
+        #         )
+        #     if item.is_lock:
+        #         language = ':lock:'
+        #     else:
+        #         if item.solutions:
+        #             dirname = '{folder}/{id}-{title}'.format(
+        #                 folder=SOLUTION_FOLDER_NAME,
+        #                 id=str(item.question_id).zfill(MAX_DIGIT_LEN),
+        #                 title=item.question__title_slug,
+        #             )
+        #             language = ''
+        #             language_lst = [
+        #                 i['lang']
+        #                 for i in item.solutions
+        #                 if i['lang'] in self.languages
+        #             ]
+        #             while language_lst:
+        #                 lan = language_lst.pop()
+        #                 language += '[{language}]({repo}/blob/master/{dirname}/{title}.{ext})'.format(
+        #                     language=lan.capitalize(),
+        #                     repo=CONFIG['repo'],
+        #                     dirname=dirname,
+        #                     title=item.question__title_slug,
+        #                     ext=self.prolangdict[lan].ext,
+        #                 )
+        #                 language += ' '
+        #         else:
+        #             language = ''
+        #     language = language.strip()
+        #     md += '|{id}|[{title}]({url})|{language}|{article}|{difficulty}|\n'.format(
+        #         id=item.question_id,
+        #         title=item.question__title_slug,
+        #         url=item.url,
+        #         language=language,
+        #         article=article,
+        #         difficulty=item.difficulty,
+        #     )
 
-        # Wait for update
-        time.sleep(10)
+        with open('README.md', 'w') as f:
+            f.write(md)
 
-        driver.find_element_by_name('login').send_keys(usr)
-        driver.find_element_by_name('password').send_keys(pwd)
-        # driver.find_element_by_id('id_remember').click()
-        btns = driver.find_elements_by_tag_name('button')
-        # print(btns)
-        submit_btn = btns[1]
-        submit_btn.click()
+    def _sort_by_timestamp(self):
+        sorted_dict = {}
 
-        time.sleep(5)
-        webdriver_cookies = driver.get_cookies()
-        driver.close()
-        if 'LEETCODE_SESSION' not in [
-            cookie['name'] for cookie in webdriver_cookies
-        ]:
-            raise Exception('Please check your config or your network.')
+        # Initialize list in sorted_dict
+        for title in TIME_TITLES:
+            sorted_dict[title] = []
 
-        with open(COOKIE_PATH, 'w') as f:
-            json.dump(webdriver_cookies, f, indent=2)
-        self.cookies = {
-            str(cookie['name']): str(cookie['value'])
-            for cookie in webdriver_cookies
-        }
-        self.session.cookies.update(self.cookies)
+        # sort the question into sorted_dict by timestamp
+        for question_id in sorted(self.acDict.keys()):
+            question = self.acDict[question_id]
+            timestamp = question['timestamp']
+            diff = TODAY_T - timestamp
+            less_than_a_year = False
+            for i in range(len(TIME_TITLES)):
+                if diff < TIME_LIST[i]:
+                    sorted_dict[TIME_TITLES[i]].append(question)
+                    less_than_a_year = True
+                    break
+            if not less_than_a_year:
+                sorted_dict['rest'].append(question)
+        self.sort_dict = sorted_dict
+        print(sorted_dict)
 
-    def get_problems(self):
-        url = self.base_url + "/api/problems/all/"
-        time.sleep(5)
-        resp = self.session.get(url, timeout=10)
-
-        question_list = json.loads(resp.content.decode('utf-8'))
-        for question in question_list['stat_status_pairs']:
-            # 'ac', 'notac' or 'none'
-            question_info = {}
-            question_id = question['stat']['question_id']
-            question_info['status'] = question['status']
-            question_info['slug'] = question['stat']['question__title_slug']
-            question_info['title'] = question['stat']['question_title']
-            # difficulty，1 easy，2 medium，3 hard
-            question_info['difficulty'] = question['difficulty']['level']
-            # only record ac submission
-            if question_info['status'] == 'ac':
-                self.acDict[question_id] = question_info
-
-        print(self.acDict)
-
-    def get_timestamp(self):
-        for question_id in self.acDict:
-            question_slug = self.acDict[question_id]
-            timestamp = self.get_submission(question_slug)
-            self.acDict[question_id][timestamp] = timestamp
-
-        print(self.acDict)
-
-    def get_submission(self, slug):
-        url = self.base_url + "/graphql"
-        params = {'operationName': "Submissions",
-                  'variables': {"offset": 0, "limit": 20, "lastKey": '', "questionSlug": slug},
-                  'query': '''query Submissions($offset: Int!, $limit: Int!, $lastKey: String, $questionSlug: String!) {
-                    submissionList(offset: $offset, limit: $limit, lastKey: $lastKey, questionSlug: $questionSlug) {
-                    lastKey
-                    hasNext
-                    submissions {
-                        id
-                        statusDisplay
-                        lang
-                        runtime
-                        timestamp
-                        url
-                        isPending
-                        __typename
-                    }
-                    __typename
-                }
-            }'''
-                  }
-
-        json_data = json.dumps(params).encode('utf8')
-        # headers = {'User-Agent': HEADERS['User-Agent'], 'Connection': 'keep-alive',
-        #            'Referer': 'https://leetcode.com/accounts/login/',
-        #            "Content-Type": "application/json"}
-        resp = self.session.post(url, data=json_data, timeout=10)
-        print(resp)
-        content = resp.json()
-        for submission in content['data']['submissionList']['submissions']:
-            status = submission['status_display']
-            print(status)
-            timestamp = submission['timestamp']
-            if status == 'Accepted':
-                return timestamp
-        return 1
-
-    @property
-    def is_login(self):
-        """ validate if the cookie exists and not overtime """
-        api_url = self.base_url + '/api/problems/algorithms/'  # NOQA
-        if not COOKIE_PATH.exists():
-            return False
-
-        with open(COOKIE_PATH, 'r') as f:
-            webdriver_cookies = json.load(f)
-        self.cookies = {
-            str(cookie['name']): str(cookie['value'])
-            for cookie in webdriver_cookies
-        }
-        self.session.cookies.update(self.cookies)
-        r = self.session.get(api_url, proxies=PROXIES)
-        if r.status_code != 200:
-            return False
-
-        data = json.loads(r.text)
-        return 'user_name' in data and data['user_name'] != ''
 
 def todo(leetcode):
-    leetcode.login()
-    if not leetcode.is_login:
-        leetcode.login()
     logging.info('Login successfully!')
-    leetcode.get_problems()
-    leetcode.get_timestamp()
+    leetcode.prepare_data()
+    leetcode.write_readme()
 
 
 def main():
-    logging.basicConfig(filename='log.log', level=logging.INFO)
-    logger = logging.getLogger("main")
-    logger.info('Master runs')
+    logging.basicConfig(filename='test_log.log', level=logging.INFO)
+    logger = logging.getLogger(__name__)
+    logger.info('Crawler starts')
     leetcode = Leetcode()
     todo(leetcode)
 
