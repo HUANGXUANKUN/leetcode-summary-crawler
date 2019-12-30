@@ -116,16 +116,17 @@ class Leetcode:
         self.num_total = question_list['num_total']
 
         for question in question_list['stat_status_pairs']:
-            # 'ac', 'notac' or 'none'
-            question_info = {}
-            question_id = question['stat']['question_id']
-            question_info['status'] = question['status']
-            question_info['slug'] = question['stat']['question__title_slug']
-            question_info['title'] = question['stat']['question__title']
-            # difficulty，1 easy，2 medium，3 hard
-            question_info['difficulty'] = question['difficulty']['level']
             # only record ac submission
-            if question_info['status'] == 'ac':
+            if question['status'] == 'ac':
+                # 'ac', 'notac' or 'none'
+                question_info = {}
+                question_id = question['stat']['question_id']
+                question_info['status'] = question['status']
+                question_info['slug'] = question['stat']['question__title_slug']
+                question_info['title'] = question['stat']['question__title']
+                question_info['id'] = question_id
+                # difficulty，1 easy，2 medium，3 hard
+                question_info['difficulty'] = question['difficulty']['level']
                 self.acDict[question_id] = question_info
         print(self.acDict)
 
@@ -172,16 +173,15 @@ class Leetcode:
         acCount = 0
         for submission in submissions:
             status = submission['statusDisplay']
-            print(status)
             timestamp = submission['timestamp']
-            print(timestamp)
             url = submission['url']
-            print(url)
+            lang = submission['lang']
             if status == 'Accepted':
                 acCount += 1
                 if not hasUpdated:
                     self.acDict[id]['timestamp'] = timestamp
                     self.acDict[id]['submission_url'] = url
+                    self.acDict[id]['lang'] = lang
                     hasUpdated = True
         # update accuracy of all submissions
         self.acDict[id]['accuracy'] = (acCount * 100) / len(submissions)

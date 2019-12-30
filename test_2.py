@@ -28,6 +28,7 @@ TIME_TITLES = ['1w', '2w', '3w', '4w', '8w', '12w', '24w', '48w', 'rest']
 TIME_LIST = [1 * WEEK_T, 2 * WEEK_T, 3 * WEEK_T, 4 * WEEK_T, 8 * WEEK_T, 12 * WEEK_T, 24 * WEEK_T, 48 * WEEK_T,
              sys.maxsize]
 
+
 class Leetcode:
 
     def __init__(self):
@@ -43,44 +44,54 @@ class Leetcode:
         self.num_total = 1388
         acDict = {}
 
-        acDict[1377] = {'title': 'title 1',
-                        'slug': 'title 2',
-                        'accuracy': 45,
+        acDict[1377] = {'title': 'House Robber III 1',
+                        'slug': 'House-Robber-3',
+                        'accuracy': 99,
                         'difficulty': 1,
-                        'url': '/submissions/detail/288978095',
+                        'submission_url': '/submissions/detail/288978095',
                         'timestamp': 1575462591,
+                        'lang': 'cpp',
+                        'id': 1377
                         }
 
         acDict[2] = {'title': 'two sum',
                      'slug': 'two-sum',
-                     'accuracy': 45,
+                     'accuracy': 88,
                      'difficulty': 1,
-                     'url': '/submissions/detail/288978095',
+                     'submission_url': '/submissions/detail/288978095',
                      'timestamp': 1578469591,
+                     'lang': 'cpp',
+                     'id': 2
                      }
 
-        acDict[56] = {'title': 'two sum',
-                      'slug': 'two-sum',
+        acDict[56] = {'title': 'Diameter of Binary Tree',
+                      'slug': 'diameter-of-binary-tree',
                       'accuracy': 45,
                       'difficulty': 1,
-                      'url': '/submissions/detail/288978095',
+                      'submission_url': '/submissions/detail/288978095',
                       'timestamp': 1527462591,
+                      'lang': 'java',
+                      'id': 56
                       }
 
-        acDict[18] = {'title': 'two sum',
-                      'slug': 'two-sum',
-                      'accuracy': 45,
-                      'difficulty': 1,
-                      'url': '/submissions/detail/288978095',
+        acDict[18] = {'title': 'Three Sum',
+                      'slug': 'three-sum',
+                      'accuracy': 48,
+                      'difficulty': 2,
+                      'submission_url': '/submissions/detail/288978095',
                       'timestamp': 1577417591,
+                      'id': 18,
+                      'lang': 'java'
                       }
 
-        acDict[35] = {'title': 'two sum',
-                      'slug': 'two-sum',
+        acDict[35] = {'title': 'Subtract the Product and Sum of Digits of an Integer',
+                      'slug': 'subtract-the-product',
                       'accuracy': 45,
                       'difficulty': 1,
-                      'url': '/submissions/detail/288978095',
+                      'submission_url': '/submissions/detail/288978095',
                       'timestamp': 1577492591,
+                      'id': 35,
+                      'lang': 'java'
                       }
         self.acDict = acDict
 
@@ -93,56 +104,26 @@ class Leetcode:
                 I have solved **{num_solved}   /   {num_total}** problems
                 If you want to use this tool please follow this [User Guide](https://github.com/HUANGXUANKUN/leetcode-summary-generatorREADME.md)
                 If you have any question, please give me an [issue](https://github.com/HUANGXUANKUN/leetcode-summary-generator/issues).
-                '''\
+                ''' \
             .format(
-                tm=time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())),
-                num_solved=self.num_solved,
-                num_total=self.num_total,
-            )
-
-        # md += '\n'
-        # for item in self.items:
-        #     article = ''
-        #     if item.question__article__slug:
-        #         article = '[:memo:](https://leetcode.com/articles/{article}/)'.format(
-        #             article=item.question__article__slug
-        #         )
-        #     if item.is_lock:
-        #         language = ':lock:'
-        #     else:
-        #         if item.solutions:
-        #             dirname = '{folder}/{id}-{title}'.format(
-        #                 folder=SOLUTION_FOLDER_NAME,
-        #                 id=str(item.question_id).zfill(MAX_DIGIT_LEN),
-        #                 title=item.question__title_slug,
-        #             )
-        #             language = ''
-        #             language_lst = [
-        #                 i['lang']
-        #                 for i in item.solutions
-        #                 if i['lang'] in self.languages
-        #             ]
-        #             while language_lst:
-        #                 lan = language_lst.pop()
-        #                 language += '[{language}]({repo}/blob/master/{dirname}/{title}.{ext})'.format(
-        #                     language=lan.capitalize(),
-        #                     repo=CONFIG['repo'],
-        #                     dirname=dirname,
-        #                     title=item.question__title_slug,
-        #                     ext=self.prolangdict[lan].ext,
-        #                 )
-        #                 language += ' '
-        #         else:
-        #             language = ''
-        #     language = language.strip()
-        #     md += '|{id}|[{title}]({url})|{language}|{article}|{difficulty}|\n'.format(
-        #         id=item.question_id,
-        #         title=item.question__title_slug,
-        #         url=item.url,
-        #         language=language,
-        #         article=article,
-        #         difficulty=item.difficulty,
-        #     )
+            tm=time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())),
+            num_solved=self.num_solved,
+            num_total=self.num_total,
+        )
+        md += '\n'
+        for title in TIME_TITLES:
+            list = self.sort_dict[title]
+            if len(list) > 0:
+                md += '## {}\n'.format(title)
+                for problem in list:
+                    md += '|{id}|[{title}]({problem_url})|[{lang}]({submission_url})|{difficulty}|'.format(
+                        id=problem['id'],
+                        title=problem['title'],
+                        lang=problem['lang'].capitalize(),
+                        problem_url=self.base_url + '/problems/' + problem['slug'],
+                        submission_url=self.base_url + problem['submission_url'],
+                        difficulty=problem['difficulty'],
+                    )
 
         with open('README.md', 'w') as f:
             f.write(md)
