@@ -39,6 +39,11 @@ HEADERS = {
 }
 
 TODAY_T = time.time()
+DAY_T = 3600 * 24
+WEEK_T = 7 * DAY_T
+TIME_TITLES = ['This week', 'Last week', '2 weeks ago', '3 weeks ago', '1 month ago', '2 months ago', '3 months ago', '6 months ago', '1 year ago']
+TIME_LIST = [1 * WEEK_T, 2 * WEEK_T, 3 * WEEK_T, 4 * WEEK_T, 8 * WEEK_T, 12 * WEEK_T, 24 * WEEK_T, 48 * WEEK_T,
+             sys.maxsize]
 
 CONFIG = get_config_from_file(CONFIG_FILE)
 
@@ -212,14 +217,73 @@ class Leetcode:
 
     def write_readme(self):
         self._sort_by_timestamp()
+        md = '''# Leetcode Summary
+#### Spaced-repetition is the best way to study. 
+#### Re-attempt solved problems for better understanding.
+Update time:  {tm}
+Auto created by [leetcode_generate](https://github.com/HUANGXUANKUN/leetcode-summary-generator)
+I have solved *{num_solved}* / *{num_total}* problems
+If you want to use this tool please follow this [User Guide](https://github.com/HUANGXUANKUN/leetcode-summary-generatorREADME.md)
+If you have any question, please give me an [issue](https://github.com/HUANGXUANKUN/leetcode-summary-generator/issues).
+                ''' \
+            .format(
+            tm=time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())),
+            num_solved=self.num_solved,
+            num_total=self.num_total,
+        )
+        md += '\n'
+        header_title = 'Problem :question:'
+        header_id = '--Id--'
+        md += '| {} | {} |' \
+              ' Lang | Difficulty | Accuracy% |\n|:----:|:----:|:---:|:---:|:---:|\n'.format(header_id, header_title)
+        for title in TIME_TITLES:
+            list = self.sort_dict[title]
+            if len(list) > 0:
+                md += '|**:calendar:**|**{}**|\n'.format(title)
+                for problem in list:
+                    # set difficutly output
+                    difficulty = difficulty=problem['difficulty']
+                    difficulty_str = ''
+                    if difficulty == 1:
+                        difficulty_str = 'Easy'
+                    elif difficulty == 2:
+                        difficulty_str = 'Medium'
+                    else:
+                        difficulty_str = 'Hard'
+                    description = problem['title']
 
-        pass;
+                    # set accuracy image
+                    accuracy_img = ' :smile:'
+                    if problem['accuracy'] < 50:
+                        accuracy_img = ' :pout:'
+
+                    if len(description) > 50:
+                        print(len(description))
+                        print(description)
+                        while len(description) > 47:
+                            print('spliting')
+                            description = description.rsplit(' ', 1)[0]
+                            print(description)
+                            print(len(description))
+                        description += '...'
+                    print(description)
+
+                    md += '|{id}|[{title}]({problem_url})|[{lang}]({submission_url})|{difficulty}|{accuracy}|\n'.format(
+                        id=problem['id'],
+                        title=description,
+                        lang=problem['lang'].capitalize(),
+                        problem_url=self.base_url + '/problems/' + problem['slug'],
+                        submission_url=self.base_url + problem['submission_url'],
+                        difficulty=difficulty_str,
+                        accuracy=str(problem['accuracy']) + accuracy_img
+                    )
+                md += '||||||\n'
+
+
+        with open('README.md', 'w') as f:
+            f.write(md)
 
     def _sort_by_timestamp(self):
-        DAY_T = 3600 * 24
-        WEEK_T = 7 * DAY_T
-        TIME_TITLES = ['1w', '2w', '3w', '4w', '8w', '12w', '24w', '48w']
-        TIME_LIST = [1 * WEEK_T, 2 * WEEK_T, 3 * WEEK_T, 4 * WEEK_T, 8 * WEEK_T, 12 * WEEK_T, 24 * WEEK_T, 48 * WEEK_T]
         sorted_dict = {}
 
         # Initialize list in sorted_dict
@@ -227,23 +291,20 @@ class Leetcode:
             sorted_dict[title] = []
 
         # sort the question into sorted_dict by timestamp
-        for question in self.acDict:
+        for question_id in sorted(self.acDict.keys()):
+            question = self.acDict[question_id]
             timestamp = question['timestamp']
-            diff = TODAY_T - timestamp
-            print(diff / (24 * 3600))
+            diff = int(TODAY_T) - int(timestamp)
             less_than_a_year = False
             for i in range(len(TIME_TITLES)):
-                print(TIME_TITLES)
                 if diff < TIME_LIST[i]:
                     sorted_dict[TIME_TITLES[i]].append(question)
                     less_than_a_year = True
                     break
-
             if not less_than_a_year:
                 sorted_dict['rest'].append(question)
-
         self.sort_dict = sorted_dict
-
+        print(sorted_dict)
 
 def todo(leetcode):
     leetcode.login()
@@ -260,11 +321,8 @@ def main():
     logger = logging.getLogger(__name__)
     logger.info('Crawler starts')
     leetcode = Leetcode()
-
-    while True:
-        todo(leetcode)
-        time.sleep(24 * 60 * 60)
-
+    todo(leetcode)
+    time.sleep(24 * 60 * 60)
 
 if __name__ == '__main__':
     main()
