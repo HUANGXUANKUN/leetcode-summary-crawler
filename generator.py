@@ -1,24 +1,18 @@
 # coding:utf-8
 #
-# Author: BONFY<foreverbonfy@163.com>
+# Author: HUANG XUAN KUN<hxk123123123@gmail.com>
 # Github: https://github.com/bonfy
-# Repo:   https://github.com/bonfy/leetcode
-# Usage:  Leetcode solution downloader and auto generate readme
+# Repo:   https://github.com/HUANGXUANKUN/leetcode-summary-generator
+# Usage:  Leetcode summary generator for revision
 #
 import requests
-import os
-import configparser
 import json
 import time
-import datetime
-import re
 import sys
-import html
 import logging
 
 from pathlib import Path
 from selenium import webdriver
-from collections import namedtuple, OrderedDict
 from leetcodeUtil import *
 
 HOME = Path.cwd()
@@ -133,16 +127,16 @@ class Leetcode:
                 # difficulty，1 easy，2 medium，3 hard
                 question_info['difficulty'] = question['difficulty']['level']
                 self.acDict[question_id] = question_info
-        print(self.acDict)
 
     def get_submissions(self):
         logger = logging.getLogger(__name__)
         for question_id in self.acDict:
             question_slug = self.acDict[question_id]['slug']
+            print('Generating {}. {}'.format(question_id,question_slug))
             hasUpdated = self._get_timestamp_url(question_slug, question_id)
+
             if not hasUpdated:
                 logger.warning('Fails to get submission of problem: {}'.format(self.acDict[question_id]['title']))
-        print(self.acDict)
 
     def _get_timestamp_url(self, slug, id):
         logger = logging.getLogger(__name__)
@@ -218,7 +212,7 @@ class Leetcode:
     def write_readme(self):
         self._sort_by_timestamp()
         md = '''# Leetcode Summary
-#### Spaced-repetition is the best way to study. 
+#### Spaced-repetition is the best way to learn. 
 #### Re-attempt solved problems for better understanding.
 Update time:  {tm}
 Auto created by [leetcode_generate](https://github.com/HUANGXUANKUN/leetcode-summary-generator)
@@ -233,9 +227,9 @@ If you have any question, please give me an [issue](https://github.com/HUANGXUAN
         )
         md += '\n'
         header_title = 'Problem :question:'
-        header_id = '--Id--'
+        header_id = 'Id'
         md += '| {} | {} |' \
-              ' Lang | Difficulty | Accuracy% |\n|:----:|:----:|:---:|:---:|:---:|\n'.format(header_id, header_title)
+              ' Lang | Difficulty | Accuracy |\n|:----:|:----:|:---:|:---:|:---:|\n'.format(header_id, header_title)
         for title in TIME_TITLES:
             list = self.sort_dict[title]
             if len(list) > 0:
@@ -258,15 +252,12 @@ If you have any question, please give me an [issue](https://github.com/HUANGXUAN
                         accuracy_img = ' :pout:'
 
                     if len(description) > 50:
-                        print(len(description))
-                        print(description)
                         while len(description) > 47:
                             print('spliting')
                             description = description.rsplit(' ', 1)[0]
                             print(description)
                             print(len(description))
                         description += '...'
-                    print(description)
 
                     md += '|{id}|[{title}]({problem_url})|[{lang}]({submission_url})|{difficulty}|{accuracy}|\n'.format(
                         id=problem['id'],
@@ -275,7 +266,7 @@ If you have any question, please give me an [issue](https://github.com/HUANGXUAN
                         problem_url=self.base_url + '/problems/' + problem['slug'],
                         submission_url=self.base_url + problem['submission_url'],
                         difficulty=difficulty_str,
-                        accuracy=str(problem['accuracy']) + accuracy_img
+                        accuracy=str(int(problem['accuracy'])) + '%' + accuracy_img
                     )
                 md += '||||||\n'
 
@@ -295,16 +286,11 @@ If you have any question, please give me an [issue](https://github.com/HUANGXUAN
             question = self.acDict[question_id]
             timestamp = question['timestamp']
             diff = int(TODAY_T) - int(timestamp)
-            less_than_a_year = False
             for i in range(len(TIME_TITLES)):
                 if diff < TIME_LIST[i]:
                     sorted_dict[TIME_TITLES[i]].append(question)
-                    less_than_a_year = True
                     break
-            if not less_than_a_year:
-                sorted_dict['rest'].append(question)
         self.sort_dict = sorted_dict
-        print(sorted_dict)
 
 def todo(leetcode):
     leetcode.login()
@@ -322,7 +308,6 @@ def main():
     logger.info('Crawler starts')
     leetcode = Leetcode()
     todo(leetcode)
-    time.sleep(24 * 60 * 60)
 
 if __name__ == '__main__':
     main()
