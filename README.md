@@ -8,7 +8,9 @@
 ###### To raise a question [issue](https://github.com/HUANGXUANKUN/leetcode-summary-generator/issues).
 
 Update time:  2019-12-31 17:07:12
+
 Auto created by [leetcode_generate](https://github.com/HUANGXUANKUN/leetcode-summary-generator)
+
 I have solved *1220* / *1307* problems
 
                 
