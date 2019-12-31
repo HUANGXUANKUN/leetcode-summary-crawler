@@ -16,9 +16,11 @@
      ```
 
 ## How to use
+1. In `config.cfg`, enter Leetcode username and password 
 
-1. Run `python generator.py`
-2. The summary will be generated as **README.md**
+2. Run `python generator.py`
+
+3. The summary will be generated as **README.md**
 
 ## What you might need
 
