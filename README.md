@@ -1,5 +1,5 @@
-#### Spaced-repetition is the best way to learn. Re-attempt solved problems for better understanding.
 #### Generate a summary of your attempted problems, and re-attempt the problems you have done long ago or with low accuracy.
+###### Spaced-repetition is the best way to learn. Re-attempt solved problems for better understanding.
 
 # User Guide
 
