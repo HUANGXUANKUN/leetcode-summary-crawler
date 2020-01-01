@@ -23,12 +23,7 @@
 3. Run `python generator.py`
 
 ## What you might need
-
-##### Markdown Readers:
-
 -  [typora](https://www.typora.io/): A extremely lightweight markdown reader
--  [atom](https://atom.io/) 
-
 
 # Leetcode Summary Sample
 #### Spaced-repetition is the best way to learn. 
