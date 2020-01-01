@@ -2,7 +2,7 @@
 
 ## Requirements
 
-1. Install python 3.6 and above
+1. Install `python 3.6` and above
 
 2. Install packages `selenium` and `requests`
 
