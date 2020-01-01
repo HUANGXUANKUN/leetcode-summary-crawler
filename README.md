@@ -57,22 +57,6 @@ I have solved *1220* / *1307* problems
 |213|[House Robber II](https://leetcode.com/problems/house-robber-ii)|[Cpp](https://leetcode.com/submissions/detail/288203274/)|Medium|63% :smile:|
 |215|[Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array)|[Cpp](https://leetcode.com/submissions/detail/288203451/)|Medium|100% :smile:|
 |216|[Combination Sum III](https://leetcode.com/problems/combination-sum-iii)|[Cpp](https://leetcode.com/submissions/detail/288204444/)|Medium|100% :smile:|
-|220|[Contains Duplicate III](https://leetcode.com/problems/contains-duplicate-iii)|[Cpp](https://leetcode.com/submissions/detail/288205736/)|Medium|35% :pout:|
-|221|[Maximal Square](https://leetcode.com/problems/maximal-square)|[Cpp](https://leetcode.com/submissions/detail/288206329/)|Medium|90% :smile:|
-|222|[Count Complete Tree Nodes](https://leetcode.com/problems/count-complete-tree-nodes)|[Cpp](https://leetcode.com/submissions/detail/288207213/)|Medium|75% :smile:|
-|227|[Basic Calculator II](https://leetcode.com/problems/basic-calculator-ii)|[Cpp](https://leetcode.com/submissions/detail/288207942/)|Medium|61% :smile:|
-|228|[Summary Ranges](https://leetcode.com/problems/summary-ranges)|[Cpp](https://leetcode.com/submissions/detail/288208434/)|Medium|77% :smile:|
-|230|[Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst)|[Cpp](https://leetcode.com/submissions/detail/288230981/)|Medium|100% :smile:|
-|240|[Search a 2D Matrix II](https://leetcode.com/problems/search-a-2d-matrix-ii)|[Cpp](https://leetcode.com/submissions/detail/288231808/)|Medium|75% :smile:|
-|241|[Different Ways to Add Parentheses](https://leetcode.com/problems/different-ways-to-add-parentheses)|[Cpp](https://leetcode.com/submissions/detail/288232885/)|Medium|100% :smile:|
-|244|[Shortest Word Distance II](https://leetcode.com/problems/shortest-word-distance-ii)|[Cpp](https://leetcode.com/submissions/detail/288233450/)|Medium|87% :smile:|
-|245|[Shortest Word Distance III](https://leetcode.com/problems/shortest-word-distance-iii)|[Cpp](https://leetcode.com/submissions/detail/288234500/)|Medium|60% :smile:|
-|249|[Group Shifted Strings](https://leetcode.com/problems/group-shifted-strings)|[Cpp](https://leetcode.com/submissions/detail/288235809/)|Medium|100% :smile:|
-|251|[Flatten 2D Vector](https://leetcode.com/problems/flatten-2d-vector)|[Cpp](https://leetcode.com/submissions/detail/288236272/)|Medium|53% :smile:|
-|253|[Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii)|[Cpp](https://leetcode.com/submissions/detail/288237161/)|Medium|71% :smile:|
-|254|[Factor Combinations](https://leetcode.com/problems/factor-combinations)|[Cpp](https://leetcode.com/submissions/detail/288239327/)|Medium|70% :smile:|
-|255|[Verify Preorder Sequence in Binary Search Tree](https://leetcode.com/problems/verify-preorder-sequence-in-binary-search-tree)|[Cpp](https://leetcode.com/submissions/detail/288240184/)|Medium|40% :pout:|
-|259|[3Sum Smaller](https://leetcode.com/problems/3sum-smaller)|[Cpp](https://leetcode.com/submissions/detail/288240846/)|Medium|85% :smile:|
 |260|[Single Number III](https://leetcode.com/problems/single-number-iii)|[Cpp](https://leetcode.com/submissions/detail/288241735/)|Medium|88% :smile:|
 |261|[Graph Valid Tree](https://leetcode.com/problems/graph-valid-tree)|[Cpp](https://leetcode.com/submissions/detail/288242247/)|Medium|71% :smile:|
 |264|[Ugly Number II](https://leetcode.com/problems/ugly-number-ii)|[Cpp](https://leetcode.com/submissions/detail/288383087/)|Medium|100% :smile:|
@@ -80,28 +64,6 @@ I have solved *1220* / *1307* problems
 |271|[Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings)|[Cpp](https://leetcode.com/submissions/detail/288384585/)|Medium|85% :smile:|
 |274|[H-Index](https://leetcode.com/problems/h-index)|[Cpp](https://leetcode.com/submissions/detail/288385613/)|Medium|40% :pout:|
 |275|[H-Index II](https://leetcode.com/problems/h-index-ii)|[Cpp](https://leetcode.com/submissions/detail/288385755/)|Medium|71% :smile:|
-|277|[Find the Celebrity](https://leetcode.com/problems/find-the-celebrity)|[Cpp](https://leetcode.com/submissions/detail/288387205/)|Medium|100% :smile:|
-|279|[Perfect Squares](https://leetcode.com/problems/perfect-squares)|[Cpp](https://leetcode.com/submissions/detail/288388494/)|Medium|75% :smile:|
-|280|[Wiggle Sort](https://leetcode.com/problems/wiggle-sort)|[Cpp](https://leetcode.com/submissions/detail/288388863/)|Medium|77% :smile:|
-|281|[Zigzag Iterator](https://leetcode.com/problems/zigzag-iterator)|[Cpp](https://leetcode.com/submissions/detail/288390302/)|Medium|100% :smile:|
-|284|[Peeking Iterator](https://leetcode.com/problems/peeking-iterator)|[Cpp](https://leetcode.com/submissions/detail/288390862/)|Medium|66% :smile:|
-|285|[Inorder Successor in BST](https://leetcode.com/problems/inorder-successor-in-bst)|[Cpp](https://leetcode.com/submissions/detail/288403569/)|Medium|72% :smile:|
-|286|[Walls and Gates](https://leetcode.com/problems/walls-and-gates)|[Cpp](https://leetcode.com/submissions/detail/288404693/)|Medium|78% :smile:|
-|287|[Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number)|[Cpp](https://leetcode.com/submissions/detail/288405424/)|Medium|62% :smile:|
-|288|[Unique Word Abbreviation](https://leetcode.com/problems/unique-word-abbreviation)|[Cpp](https://leetcode.com/submissions/detail/288434903/)|Medium|42% :pout:|
-|289|[Game of Life](https://leetcode.com/problems/game-of-life)|[Cpp](https://leetcode.com/submissions/detail/288435653/)|Medium|100% :smile:|
-|294|[Flip Game II](https://leetcode.com/problems/flip-game-ii)|[Cpp](https://leetcode.com/submissions/detail/288437495/)|Medium|86% :smile:|
-|298|[Binary Tree Longest Consecutive Sequence](https://leetcode.com/problems/binary-tree-longest-consecutive-sequence)|[Cpp](https://leetcode.com/submissions/detail/288437994/)|Medium|77% :smile:|
-|300|[Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence)|[Cpp](https://leetcode.com/submissions/detail/288438375/)|Medium|80% :smile:|
-|306|[Additive Number](https://leetcode.com/problems/additive-number)|[Cpp](https://leetcode.com/submissions/detail/288439342/)|Medium|37% :pout:|
-|307|[Range Sum Query - Mutable](https://leetcode.com/problems/range-sum-query-mutable)|[Cpp](https://leetcode.com/submissions/detail/288440238/)|Medium|50% :smile:|
-|309|[Best Time to Buy and Sell Stock with Cooldown](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown)|[Cpp](https://leetcode.com/submissions/detail/288440793/)|Medium|88% :smile:|
-|310|[Minimum Height Trees](https://leetcode.com/problems/minimum-height-trees)|[Cpp](https://leetcode.com/submissions/detail/288441826/)|Medium|46% :pout:|
-|313|[Super Ugly Number](https://leetcode.com/problems/super-ugly-number)|[Cpp](https://leetcode.com/submissions/detail/288442279/)|Medium|87% :smile:|
-|314|[Binary Tree Vertical Order Traversal](https://leetcode.com/problems/binary-tree-vertical-order-traversal)|[Cpp](https://leetcode.com/submissions/detail/288442582/)|Medium|81% :smile:|
-|318|[Maximum Product of Word Lengths](https://leetcode.com/problems/maximum-product-of-word-lengths)|[Cpp](https://leetcode.com/submissions/detail/288442924/)|Medium|100% :smile:|
-|320|[Generalized Abbreviation](https://leetcode.com/problems/generalized-abbreviation)|[Cpp](https://leetcode.com/submissions/detail/288443274/)|Medium|75% :smile:|
-|322|[Coin Change](https://leetcode.com/problems/coin-change)|[Cpp](https://leetcode.com/submissions/detail/288443518/)|Medium|50% :smile:|
 |323|[Number of Connected Components in an Undirected...](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph)|[Cpp](https://leetcode.com/submissions/detail/288443853/)|Medium|77% :smile:|
 |324|[Wiggle Sort II](https://leetcode.com/problems/wiggle-sort-ii)|[Cpp](https://leetcode.com/submissions/detail/288444056/)|Medium|70% :smile:|
 |325|[Maximum Size Subarray Sum Equals k](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k)|[Cpp](https://leetcode.com/submissions/detail/288444309/)|Medium|92% :smile:|
@@ -172,69 +134,6 @@ I have solved *1220* / *1307* problems
 |451|[Sort Characters By Frequency](https://leetcode.com/problems/sort-characters-by-frequency)|[Cpp](https://leetcode.com/submissions/detail/288888497/)|Medium|100% :smile:|
 |452|[Minimum Number of Arrows to Burst Balloons](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons)|[Cpp](https://leetcode.com/submissions/detail/288889724/)|Medium|66% :smile:|
 |454|[4Sum II](https://leetcode.com/problems/4sum-ii)|[Cpp](https://leetcode.com/submissions/detail/288890473/)|Medium|81% :smile:|
-|456|[132 Pattern](https://leetcode.com/problems/132-pattern)|[Cpp](https://leetcode.com/submissions/detail/288891247/)|Medium|70% :smile:|
-|457|[Circular Array Loop](https://leetcode.com/problems/circular-array-loop)|[Cpp](https://leetcode.com/submissions/detail/288895066/)|Medium|52% :smile:|
-|462|[Minimum Moves to Equal Array Elements II](https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii)|[Cpp](https://leetcode.com/submissions/detail/288897153/)|Medium|60% :smile:|
-|464|[Can I Win](https://leetcode.com/problems/can-i-win)|[Cpp](https://leetcode.com/submissions/detail/288899381/)|Medium|52% :smile:|
-|467|[Unique Substrings in Wraparound String](https://leetcode.com/problems/unique-substrings-in-wraparound-string)|[Cpp](https://leetcode.com/submissions/detail/288900743/)|Medium|71% :smile:|
-|468|[Validate IP Address](https://leetcode.com/problems/validate-ip-address)|[Cpp](https://leetcode.com/submissions/detail/288902256/)|Medium|42% :pout:|
-|469|[Convex Polygon](https://leetcode.com/problems/convex-polygon)|[Cpp](https://leetcode.com/submissions/detail/288906931/)|Medium|53% :smile:|
-|473|[Matchsticks to Square](https://leetcode.com/problems/matchsticks-to-square)|[Cpp](https://leetcode.com/submissions/detail/288909183/)|Medium|58% :smile:|
-|474|[Ones and Zeroes](https://leetcode.com/problems/ones-and-zeroes)|[Cpp](https://leetcode.com/submissions/detail/288910819/)|Medium|58% :smile:|
-|477|[Total Hamming Distance](https://leetcode.com/problems/total-hamming-distance)|[Cpp](https://leetcode.com/submissions/detail/288911119/)|Medium|77% :smile:|
-|481|[Magical String](https://leetcode.com/problems/magical-string)|[Cpp](https://leetcode.com/submissions/detail/288914163/)|Medium|80% :smile:|
-|484|[Find Permutation](https://leetcode.com/problems/find-permutation)|[Cpp](https://leetcode.com/submissions/detail/288914819/)|Medium|72% :smile:|
-|486|[Predict the Winner](https://leetcode.com/problems/predict-the-winner)|[Cpp](https://leetcode.com/submissions/detail/288915970/)|Medium|46% :pout:|
-|487|[Max Consecutive Ones II](https://leetcode.com/problems/max-consecutive-ones-ii)|[Cpp](https://leetcode.com/submissions/detail/288916863/)|Medium|75% :smile:|
-|490|[The Maze](https://leetcode.com/problems/the-maze)|[Cpp](https://leetcode.com/submissions/detail/288918859/)|Medium|83% :smile:|
-|491|[Increasing Subsequences](https://leetcode.com/problems/increasing-subsequences)|[Cpp](https://leetcode.com/submissions/detail/288922040/)|Medium|76% :smile:|
-|494|[Target Sum](https://leetcode.com/problems/target-sum)|[Cpp](https://leetcode.com/submissions/detail/288922710/)|Medium|70% :smile:|
-|495|[Teemo Attacking](https://leetcode.com/problems/teemo-attacking)|[Cpp](https://leetcode.com/submissions/detail/288923439/)|Medium|85% :smile:|
-|503|[Next Greater Element II](https://leetcode.com/problems/next-greater-element-ii)|[Cpp](https://leetcode.com/submissions/detail/288926297/)|Medium|88% :smile:|
-|505|[The Maze II](https://leetcode.com/problems/the-maze-ii)|[Cpp](https://leetcode.com/submissions/detail/288929291/)|Medium|55% :smile:|
-|508|[Most Frequent Subtree Sum](https://leetcode.com/problems/most-frequent-subtree-sum)|[Cpp](https://leetcode.com/submissions/detail/288929791/)|Medium|85% :smile:|
-|509|[Inorder Successor in BST II](https://leetcode.com/problems/inorder-successor-in-bst-ii)|[Cpp](https://leetcode.com/submissions/detail/288930144/)|Medium|85% :smile:|
-|513|[Find Bottom Left Tree Value](https://leetcode.com/problems/find-bottom-left-tree-value)|[Cpp](https://leetcode.com/submissions/detail/288931442/)|Medium|100% :smile:|
-|515|[Find Largest Value in Each Tree Row](https://leetcode.com/problems/find-largest-value-in-each-tree-row)|[Cpp](https://leetcode.com/submissions/detail/288931719/)|Medium|100% :smile:|
-|516|[Longest Palindromic Subsequence](https://leetcode.com/problems/longest-palindromic-subsequence)|[Cpp](https://leetcode.com/submissions/detail/288931992/)|Medium|64% :smile:|
-|518|[Coin Change 2](https://leetcode.com/problems/coin-change-2)|[Cpp](https://leetcode.com/submissions/detail/288932986/)|Medium|50% :smile:|
-|522|[Longest Uncommon Subsequence II](https://leetcode.com/problems/longest-uncommon-subsequence-ii)|[Cpp](https://leetcode.com/submissions/detail/288935899/)|Medium|64% :smile:|
-|523|[Continuous Subarray Sum](https://leetcode.com/problems/continuous-subarray-sum)|[Cpp](https://leetcode.com/submissions/detail/288936371/)|Medium|40% :pout:|
-|524|[Longest Word in Dictionary through Deleting](https://leetcode.com/problems/longest-word-in-dictionary-through-deleting)|[Cpp](https://leetcode.com/submissions/detail/288937178/)|Medium|80% :smile:|
-|525|[Contiguous Array](https://leetcode.com/problems/contiguous-array)|[Cpp](https://leetcode.com/submissions/detail/288937509/)|Medium|88% :smile:|
-|526|[Beautiful Arrangement](https://leetcode.com/problems/beautiful-arrangement)|[Cpp](https://leetcode.com/submissions/detail/288938384/)|Medium|100% :smile:|
-|529|[Minesweeper](https://leetcode.com/problems/minesweeper)|[Cpp](https://leetcode.com/submissions/detail/288940585/)|Medium|50% :smile:|
-|531|[Lonely Pixel I](https://leetcode.com/problems/lonely-pixel-i)|[Cpp](https://leetcode.com/submissions/detail/288941032/)|Medium|100% :smile:|
-|533|[Lonely Pixel II](https://leetcode.com/problems/lonely-pixel-ii)|[Cpp](https://leetcode.com/submissions/detail/288941788/)|Medium|66% :smile:|
-|535|[Encode and Decode TinyURL](https://leetcode.com/problems/encode-and-decode-tinyurl)|[Cpp](https://leetcode.com/submissions/detail/289126775/)|Medium|100% :smile:|
-|536|[Construct Binary Tree from String](https://leetcode.com/problems/construct-binary-tree-from-string)|[Cpp](https://leetcode.com/submissions/detail/289127771/)|Medium|75% :smile:|
-|537|[Complex Number Multiplication](https://leetcode.com/problems/complex-number-multiplication)|[Cpp](https://leetcode.com/submissions/detail/289128504/)|Medium|85% :smile:|
-|539|[Minimum Time Difference](https://leetcode.com/problems/minimum-time-difference)|[Cpp](https://leetcode.com/submissions/detail/289129384/)|Medium|85% :smile:|
-|540|[Single Element in a Sorted Array](https://leetcode.com/problems/single-element-in-a-sorted-array)|[Cpp](https://leetcode.com/submissions/detail/289131617/)|Medium|100% :smile:|
-|542|[01 Matrix](https://leetcode.com/problems/01-matrix)|[Cpp](https://leetcode.com/submissions/detail/289132455/)|Medium|66% :smile:|
-|544|[Output Contest Matches](https://leetcode.com/problems/output-contest-matches)|[Cpp](https://leetcode.com/submissions/detail/289133814/)|Medium|100% :smile:|
-|545|[Boundary of Binary Tree](https://leetcode.com/problems/boundary-of-binary-tree)|[Cpp](https://leetcode.com/submissions/detail/289135663/)|Medium|53% :smile:|
-|547|[Friend Circles](https://leetcode.com/problems/friend-circles)|[Cpp](https://leetcode.com/submissions/detail/289136301/)|Medium|100% :smile:|
-|548|[Split Array with Equal Sum](https://leetcode.com/problems/split-array-with-equal-sum)|[Cpp](https://leetcode.com/submissions/detail/289137573/)|Medium|42% :pout:|
-|549|[Binary Tree Longest Consecutive Sequence II](https://leetcode.com/problems/binary-tree-longest-consecutive-sequence-ii)|[Cpp](https://leetcode.com/submissions/detail/289138572/)|Medium|61% :smile:|
-|554|[Brick Wall](https://leetcode.com/problems/brick-wall)|[Cpp](https://leetcode.com/submissions/detail/289139198/)|Medium|77% :smile:|
-|555|[Split Concatenated Strings](https://leetcode.com/problems/split-concatenated-strings)|[Cpp](https://leetcode.com/submissions/detail/289140768/)|Medium|60% :smile:|
-|556|[Next Greater Element III](https://leetcode.com/problems/next-greater-element-iii)|[Cpp](https://leetcode.com/submissions/detail/289151608/)|Medium|58% :smile:|
-|560|[Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k)|[Cpp](https://leetcode.com/submissions/detail/289153202/)|Medium|72% :smile:|
-|562|[Longest Line of Consecutive One in Matrix](https://leetcode.com/problems/longest-line-of-consecutive-one-in-matrix)|[Cpp](https://leetcode.com/submissions/detail/289154369/)|Medium|70% :smile:|
-|565|[Array Nesting](https://leetcode.com/problems/array-nesting)|[Cpp](https://leetcode.com/submissions/detail/289155064/)|Medium|87% :smile:|
-|567|[Permutation in String](https://leetcode.com/problems/permutation-in-string)|[Cpp](https://leetcode.com/submissions/detail/289155519/)|Medium|66% :smile:|
-|573|[Squirrel Simulation](https://leetcode.com/problems/squirrel-simulation)|[Cpp](https://leetcode.com/submissions/detail/289156139/)|Medium|75% :smile:|
-|576|[Out of Boundary Paths](https://leetcode.com/problems/out-of-boundary-paths)|[Cpp](https://leetcode.com/submissions/detail/289157868/)|Medium|69% :smile:|
-|582|[Kill Process](https://leetcode.com/problems/kill-process)|[Cpp](https://leetcode.com/submissions/detail/289158327/)|Medium|100% :smile:|
-|583|[Delete Operation for Two Strings](https://leetcode.com/problems/delete-operation-for-two-strings)|[Cpp](https://leetcode.com/submissions/detail/289159043/)|Medium|100% :smile:|
-|592|[Fraction Addition and Subtraction](https://leetcode.com/problems/fraction-addition-and-subtraction)|[Cpp](https://leetcode.com/submissions/detail/289160689/)|Medium|85% :smile:|
-|593|[Valid Square](https://leetcode.com/problems/valid-square)|[Cpp](https://leetcode.com/submissions/detail/289161432/)|Medium|85% :smile:|
-|609|[Find Duplicate File in System](https://leetcode.com/problems/find-duplicate-file-in-system)|[Cpp](https://leetcode.com/submissions/detail/289164863/)|Medium|60% :smile:|
-|611|[Valid Triangle Number](https://leetcode.com/problems/valid-triangle-number)|[Cpp](https://leetcode.com/submissions/detail/289166400/)|Medium|76% :smile:|
-|616|[Add Bold Tag in String](https://leetcode.com/problems/add-bold-tag-in-string)|[Cpp](https://leetcode.com/submissions/detail/289167901/)|Medium|66% :smile:|
-|621|[Task Scheduler](https://leetcode.com/problems/task-scheduler)|[Cpp](https://leetcode.com/submissions/detail/289168721/)|Medium|63% :smile:|
-|623|[Add One Row to Tree](https://leetcode.com/problems/add-one-row-to-tree)|[Cpp](https://leetcode.com/submissions/detail/289169482/)|Medium|100% :smile:|
 |625|[Minimum Factorization](https://leetcode.com/problems/minimum-factorization)|[Cpp](https://leetcode.com/submissions/detail/289169913/)|Medium|35% :pout:|
 |634|[Find the Derangement of An Array](https://leetcode.com/problems/find-the-derangement-of-an-array)|[Cpp](https://leetcode.com/submissions/detail/289170675/)|Medium|80% :smile:|
 |636|[Exclusive Time of Functions](https://leetcode.com/problems/exclusive-time-of-functions)|[Cpp](https://leetcode.com/submissions/detail/289172329/)|Medium|71% :smile:|
@@ -748,47 +647,7 @@ I have solved *1220* / *1307* problems
 |879|[Maximize Distance to Closest Person](https://leetcode.com/problems/maximize-distance-to-closest-person)|[Cpp](https://leetcode.com/submissions/detail/286135482/)|Easy|44% :pout:|
 |882|[Peak Index in a Mountain Array](https://leetcode.com/problems/peak-index-in-a-mountain-array)|[Cpp](https://leetcode.com/submissions/detail/286135875/)|Easy|100% :smile:|
 |889|[Buddy Strings](https://leetcode.com/problems/buddy-strings)|[Cpp](https://leetcode.com/submissions/detail/286136446/)|Easy|66% :smile:|
-|890|[Lemonade Change](https://leetcode.com/problems/lemonade-change)|[Cpp](https://leetcode.com/submissions/detail/286136792/)|Easy|100% :smile:|
-|898|[Transpose Matrix](https://leetcode.com/problems/transpose-matrix)|[Cpp](https://leetcode.com/submissions/detail/286137126/)|Easy|80% :smile:|
-|899|[Binary Gap](https://leetcode.com/problems/binary-gap)|[Cpp](https://leetcode.com/submissions/detail/286137633/)|Easy|100% :smile:|
-|904|[Leaf-Similar Trees](https://leetcode.com/problems/leaf-similar-trees)|[Cpp](https://leetcode.com/submissions/detail/286138022/)|Easy|100% :smile:|
-|906|[Walking Robot Simulation](https://leetcode.com/problems/walking-robot-simulation)|[Cpp](https://leetcode.com/submissions/detail/286141240/)|Easy|71% :smile:|
-|908|[Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list)|[Cpp](https://leetcode.com/submissions/detail/286141545/)|Easy|100% :smile:|
-|919|[Projection Area of 3D Shapes](https://leetcode.com/problems/projection-area-of-3d-shapes)|[Cpp](https://leetcode.com/submissions/detail/286142091/)|Easy|100% :smile:|
-|920|[Uncommon Words from Two Sentences](https://leetcode.com/problems/uncommon-words-from-two-sentences)|[Cpp](https://leetcode.com/submissions/detail/286142868/)|Easy|100% :smile:|
-|924|[Fair Candy Swap](https://leetcode.com/problems/fair-candy-swap)|[Cpp](https://leetcode.com/submissions/detail/286143705/)|Easy|100% :smile:|
-|928|[Surface Area of 3D Shapes](https://leetcode.com/problems/surface-area-of-3d-shapes)|[Cpp](https://leetcode.com/submissions/detail/286144580/)|Easy|100% :smile:|
-|929|[Groups of Special-Equivalent Strings](https://leetcode.com/problems/groups-of-special-equivalent-strings)|[Cpp](https://leetcode.com/submissions/detail/286145159/)|Easy|55% :smile:|
-|932|[Monotonic Array](https://leetcode.com/problems/monotonic-array)|[Cpp](https://leetcode.com/submissions/detail/286145697/)|Easy|83% :smile:|
-|933|[Increasing Order Search Tree](https://leetcode.com/problems/increasing-order-search-tree)|[Cpp](https://leetcode.com/submissions/detail/286146962/)|Easy|100% :smile:|
-|941|[Sort Array By Parity](https://leetcode.com/problems/sort-array-by-parity)|[Cpp](https://leetcode.com/submissions/detail/286147185/)|Easy|71% :smile:|
-|944|[Smallest Range I](https://leetcode.com/problems/smallest-range-i)|[Cpp](https://leetcode.com/submissions/detail/286147507/)|Easy|100% :smile:|
-|950|[X of a Kind in a Deck of Cards](https://leetcode.com/problems/x-of-a-kind-in-a-deck-of-cards)|[Cpp](https://leetcode.com/submissions/detail/286148041/)|Easy|46% :pout:|
-|953|[Reverse Only Letters](https://leetcode.com/problems/reverse-only-letters)|[Cpp](https://leetcode.com/submissions/detail/286148275/)|Easy|100% :smile:|
-|958|[Sort Array By Parity II](https://leetcode.com/problems/sort-array-by-parity-ii)|[Cpp](https://leetcode.com/submissions/detail/286309255/)|Easy|54% :smile:|
-|961|[Long Pressed Name](https://leetcode.com/problems/long-pressed-name)|[Cpp](https://leetcode.com/submissions/detail/286310572/)|Easy|57% :smile:|
-|965|[Unique Email Addresses](https://leetcode.com/problems/unique-email-addresses)|[Cpp](https://leetcode.com/submissions/detail/286311102/)|Easy|100% :smile:|
-|969|[Number of Recent Calls](https://leetcode.com/problems/number-of-recent-calls)|[Cpp](https://leetcode.com/submissions/detail/286311977/)|Easy|100% :smile:|
-|974|[Reorder Data in Log Files](https://leetcode.com/problems/reorder-data-in-log-files)|[Cpp](https://leetcode.com/submissions/detail/286312910/)|Easy|83% :smile:|
-|975|[Range Sum of BST](https://leetcode.com/problems/range-sum-of-bst)|[Cpp](https://leetcode.com/submissions/detail/286313540/)|Easy|100% :smile:|
-|978|[Valid Mountain Array](https://leetcode.com/problems/valid-mountain-array)|[Cpp](https://leetcode.com/submissions/detail/286315448/)|Easy|57% :smile:|
-|979|[DI String Match](https://leetcode.com/problems/di-string-match)|[Cpp](https://leetcode.com/submissions/detail/286316444/)|Easy|100% :smile:|
-|981|[Delete Columns to Make Sorted](https://leetcode.com/problems/delete-columns-to-make-sorted)|[Cpp](https://leetcode.com/submissions/detail/286317035/)|Easy|100% :smile:|
-|986|[Largest Time for Given Digits](https://leetcode.com/problems/largest-time-for-given-digits)|[Cpp](https://leetcode.com/submissions/detail/286322174/)|Easy|66% :smile:|
-|1001|[N-Repeated Element in Size 2N Array](https://leetcode.com/problems/n-repeated-element-in-size-2n-array)|[Cpp](https://leetcode.com/submissions/detail/286325058/)|Easy|83% :smile:|
-|1005|[Univalued Binary Tree](https://leetcode.com/problems/univalued-binary-tree)|[Cpp](https://leetcode.com/submissions/detail/286325455/)|Easy|100% :smile:|
-|1010|[Powerful Integers](https://leetcode.com/problems/powerful-integers)|[Cpp](https://leetcode.com/submissions/detail/286326435/)|Easy|41% :pout:|
-|1013|[Fibonacci Number](https://leetcode.com/problems/fibonacci-number)|[Cpp](https://leetcode.com/submissions/detail/285857702/)|Easy|100% :smile:|
-|1018|[Largest Perimeter Triangle](https://leetcode.com/problems/largest-perimeter-triangle)|[Cpp](https://leetcode.com/submissions/detail/286329101/)|Easy|57% :smile:|
-|1019|[Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array)|[Cpp](https://leetcode.com/submissions/detail/286330054/)|Easy|87% :smile:|
-|1027|[Sum of Even Numbers After Queries](https://leetcode.com/problems/sum-of-even-numbers-after-queries)|[Cpp](https://leetcode.com/submissions/detail/286330933/)|Easy|80% :smile:|
-|1031|[Add to Array-Form of Integer](https://leetcode.com/problems/add-to-array-form-of-integer)|[Cpp](https://leetcode.com/submissions/detail/286331565/)|Easy|100% :smile:|
-|1035|[Cousins in Binary Tree](https://leetcode.com/problems/cousins-in-binary-tree)|[Cpp](https://leetcode.com/submissions/detail/286332965/)|Easy|100% :smile:|
-|1036|[Rotting Oranges](https://leetcode.com/problems/rotting-oranges)|[Cpp](https://leetcode.com/submissions/detail/286334485/)|Easy|100% :smile:|
-|1039|[Find the Town Judge](https://leetcode.com/problems/find-the-town-judge)|[Cpp](https://leetcode.com/submissions/detail/286338358/)|Easy|100% :smile:|
-|1041|[Available Captures for Rook](https://leetcode.com/problems/available-captures-for-rook)|[Cpp](https://leetcode.com/submissions/detail/286339351/)|Easy|100% :smile:|
-|1044|[Find Common Characters](https://leetcode.com/problems/find-common-characters)|[Cpp](https://leetcode.com/submissions/detail/286340005/)|Easy|88% :smile:|
-|1047|[Maximize Sum Of Array After K Negations](https://leetcode.com/problems/maximize-sum-of-array-after-k-negations)|[Cpp](https://leetcode.com/submissions/detail/286341575/)|Easy|80% :smile:|
+(https://leetcode.com/submissions/detail/286341575/)|Easy|80% :smile:|
 |1054|[Complement of Base 10 Integer](https://leetcode.com/problems/complement-of-base-10-integer)|[Cpp](https://leetcode.com/submissions/detail/286342012/)|Easy|66% :smile:|
 |1055|[Pairs of Songs With Total Durations Divisible...](https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60)|[Cpp](https://leetcode.com/submissions/detail/286342445/)|Easy|71% :smile:|
 |1062|[Partition Array Into Three Parts With Equal Sum](https://leetcode.com/problems/partition-array-into-three-parts-with-equal-sum)|[Cpp](https://leetcode.com/submissions/detail/286343193/)|Easy|100% :smile:|
@@ -797,16 +656,7 @@ I have solved *1220* / *1307* problems
 |1071|[Binary Prefix Divisible By 5](https://leetcode.com/problems/binary-prefix-divisible-by-5)|[Cpp](https://leetcode.com/submissions/detail/286343637/)|Easy|50% :smile:|
 |1074|[High Five](https://leetcode.com/problems/high-five)|[Cpp](https://leetcode.com/submissions/detail/286359531/)|Easy|100% :smile:|
 |1075|[Index Pairs of a String](https://leetcode.com/problems/index-pairs-of-a-string)|[Cpp](https://leetcode.com/submissions/detail/286354640/)|Easy|80% :smile:|
-|1078|[Remove Outermost Parentheses](https://leetcode.com/problems/remove-outermost-parentheses)|[Cpp](https://leetcode.com/submissions/detail/286344080/)|Easy|100% :smile:|
-|1079|[Sum of Root To Leaf Binary Numbers](https://leetcode.com/problems/sum-of-root-to-leaf-binary-numbers)|[Cpp](https://leetcode.com/submissions/detail/286344338/)|Easy|100% :smile:|
-|1082|[Sum of Digits in the Minimum Number](https://leetcode.com/problems/sum-of-digits-in-the-minimum-number)|[Cpp](https://leetcode.com/submissions/detail/286359111/)|Easy|80% :smile:|
-|1083|[Two Sum Less Than K](https://leetcode.com/problems/two-sum-less-than-k)|[Cpp](https://leetcode.com/submissions/detail/286362314/)|Easy|80% :smile:|
-|1086|[Divisor Game](https://leetcode.com/problems/divisor-game)|[Cpp](https://leetcode.com/submissions/detail/286346031/)|Easy|100% :smile:|
-|1088|[Number of Days in a Month](https://leetcode.com/problems/number-of-days-in-a-month)|[Cpp](https://leetcode.com/submissions/detail/286381661/)|Easy|66% :smile:|
-|1089|[Remove Vowels from a String](https://leetcode.com/problems/remove-vowels-from-a-string)|[Cpp](https://leetcode.com/submissions/detail/286381925/)|Easy|100% :smile:|
-|1090|[Armstrong Number](https://leetcode.com/problems/armstrong-number)|[Cpp](https://leetcode.com/submissions/detail/286386444/)|Easy|100% :smile:|
-|1094|[Matrix Cells in Distance Order](https://leetcode.com/problems/matrix-cells-in-distance-order)|[Cpp](https://leetcode.com/submissions/detail/286347454/)|Easy|100% :smile:|
-|1095|[Two City Scheduling](https://leetcode.com/problems/two-city-scheduling)|[Cpp](https://leetcode.com/submissions/detail/286346807/)|Easy|80% :smile:|
+(https://leetcode.com/submissions/detail/286346807/)|Easy|80% :smile:|
 |1098|[Largest Unique Number](https://leetcode.com/problems/largest-unique-number)|[Cpp](https://leetcode.com/submissions/detail/286386181/)|Easy|60% :smile:|
 |1102|[Check If a Number Is Majority Element in a...](https://leetcode.com/problems/check-if-a-number-is-majority-element-in-a-sorted-array)|[Cpp](https://leetcode.com/submissions/detail/286386828/)|Easy|100% :smile:|
 |1103|[Moving Stones Until Consecutive](https://leetcode.com/problems/moving-stones-until-consecutive)|[Cpp](https://leetcode.com/submissions/detail/286348553/)|Easy|71% :smile:|
@@ -826,11 +676,6 @@ I have solved *1220* / *1307* problems
 |1156|[Occurrences After Bigram](https://leetcode.com/problems/occurrences-after-bigram)|[Cpp](https://leetcode.com/submissions/detail/286357172/)|Easy|83% :smile:|
 |1164|[Missing Number In Arithmetic Progression](https://leetcode.com/problems/missing-number-in-arithmetic-progression)|[Cpp](https://leetcode.com/submissions/detail/286586235/)|Easy|100% :smile:|
 |1165|[Meeting Scheduler](https://leetcode.com/problems/meeting-scheduler)|[Cpp](https://leetcode.com/submissions/detail/285021355/)|Medium|100% :smile:|
-|1166|[Toss Strange Coins](https://leetcode.com/problems/toss-strange-coins)|[Cpp](https://leetcode.com/submissions/detail/285022383/)|Medium|100% :smile:|
-|1168|[Duplicate Zeros](https://leetcode.com/problems/duplicate-zeros)|[Cpp](https://leetcode.com/submissions/detail/286361969/)|Easy|44% :pout:|
-|1175|[Array Transformation](https://leetcode.com/problems/array-transformation)|[Cpp](https://leetcode.com/submissions/detail/286590962/)|Easy|100% :smile:|
-|1176|[Design A Leaderboard](https://leetcode.com/problems/design-a-leaderboard)|[Cpp](https://leetcode.com/submissions/detail/285038039/)|Medium|66% :smile:|
-|1177|[Tree Diameter](https://leetcode.com/problems/tree-diameter)|[Cpp](https://leetcode.com/submissions/detail/285191896/)|Medium|66% :smile:|
 |1189|[Encode Number](https://leetcode.com/problems/encode-number)|[Cpp](https://leetcode.com/submissions/detail/285212092/)|Medium|100% :smile:|
 |1190|[Smallest Common Region](https://leetcode.com/problems/smallest-common-region)|[Cpp](https://leetcode.com/submissions/detail/285214469/)|Medium|66% :smile:|
 |1191|[Synonymous Sentences](https://leetcode.com/problems/synonymous-sentences)|[Cpp](https://leetcode.com/submissions/detail/285217529/)|Medium|100% :smile:|
@@ -1032,11 +877,6 @@ I have solved *1220* / *1307* problems
 |68|[Text Justification](https://leetcode.com/problems/text-justification)|[Cpp](https://leetcode.com/submissions/detail/277287172/)|Hard|70% :smile:|
 |71|[Simplify Path](https://leetcode.com/problems/simplify-path)|[Cpp](https://leetcode.com/submissions/detail/282035564/)|Medium|42% :pout:|
 |72|[Edit Distance](https://leetcode.com/problems/edit-distance)|[Cpp](https://leetcode.com/submissions/detail/276764441/)|Hard|100% :smile:|
-|84|[Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram)|[Cpp](https://leetcode.com/submissions/detail/277298498/)|Hard|63% :smile:|
-|85|[Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle)|[Cpp](https://leetcode.com/submissions/detail/277298943/)|Hard|50% :smile:|
-|87|[Scramble String](https://leetcode.com/problems/scramble-string)|[Cpp](https://leetcode.com/submissions/detail/276768110/)|Hard|75% :smile:|
-|97|[Interleaving String](https://leetcode.com/problems/interleaving-string)|[Cpp](https://leetcode.com/submissions/detail/276769515/)|Hard|41% :pout:|
-|99|[Recover Binary Search Tree](https://leetcode.com/problems/recover-binary-search-tree)|[Cpp](https://leetcode.com/submissions/detail/277513358/)|Hard|90% :smile:|
 |115|[Distinct Subsequences](https://leetcode.com/problems/distinct-subsequences)|[Cpp](https://leetcode.com/submissions/detail/276781534/)|Hard|50% :smile:|
 |123|[Best Time to Buy and Sell Stock III](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii)|[Cpp](https://leetcode.com/submissions/detail/279819903/)|Hard|70% :smile:|
 |126|[Word Ladder II](https://leetcode.com/problems/word-ladder-ii)|[Cpp](https://leetcode.com/submissions/detail/279765577/)|Hard|55% :smile:|
