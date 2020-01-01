@@ -18,9 +18,11 @@
 ## How to use
 1. In `config.cfg`, enter Leetcode username and password 
 
-2. Run `python generator.py`
+2. Download [chromedriver.exe](https://chromedriver.chromium.org/downloads) and place in directory `drivers`
 
-3. The summary will be generated as **README.md**
+3. Run `python generator.py`
+
+4. The summary will be generated as **README.md**
 
 ## What you might need
 
