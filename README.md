@@ -1,5 +1,5 @@
-#### Generate a summary of your solved problems sorted by time-interval.
-#### Look up for problems you have not been visiting for a long time or with low accuracy. 
+### Generate a summary of your solved problems sorted by time-interval.
+### Look up for problems you have not been visiting for a long time or with low accuracy. 
 ###### Spaced-repetition is the best way to learn. Re-attempt solved problems for better understanding.
 
 # User Guide
