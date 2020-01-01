@@ -22,8 +22,6 @@
 
 3. Run `python generator.py`
 
-4. The summary will be generated as **README.md**
-
 ## What you might need
 
 ##### Markdown Readers:
