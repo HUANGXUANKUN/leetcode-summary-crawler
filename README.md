@@ -34,18 +34,10 @@
 #### Spaced-repetition is the best way to learn. 
 #### Re-attempt solved problems for better understanding.
 
-
-##### To use this tool please follow this [User Guide](https://github.com/HUANGXUANKUN/leetcode-summary-generator/blob/master/user-guide.md)
-
-##### To raise a question [issue](https://github.com/HUANGXUANKUN/leetcode-summary-generator/issues).
-
 Update time:  2019-12-31 17:07:12
-
-Auto created by [leetcode_generate](https://github.com/HUANGXUANKUN/leetcode-summary-generator)
 
 I have solved *1220* / *1307* problems
 
-                
 | Id | Problem :question: | Lang | Difficulty | Accuracy |
 |:----:|:----:|:---:|:---:|:---:|
 |**:calendar:**|**This week**|
