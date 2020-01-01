@@ -1,3 +1,6 @@
+#### Spaced-repetition is the best way to learn. Re-attempt solved problems for better understanding.
+#### Generate a summary of your attempted problems, and re-attempt the problems you have done long ago or with low accuracy.
+
 # User Guide
 
 ## Requirements
@@ -26,8 +29,6 @@
 -  [typora](https://www.typora.io/): A extremely lightweight markdown reader
 
 # Leetcode Summary Sample
-#### Spaced-repetition is the best way to learn. 
-#### Re-attempt solved problems for better understanding.
 
 Update time:  2019-12-31 17:07:12
 
