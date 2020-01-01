@@ -31,7 +31,7 @@
 
 Update time:  2019-12-31 17:07:12
 
-I have solved *1220* / *1307* problems
+I have solved *122* / *1307* problems
 
 | Id | Problem :question: | Lang | Difficulty | Accuracy |
 |:----:|:----:|:---:|:---:|:---:|
