@@ -1,4 +1,4 @@
-### Generate a summary of your solved problems sorted by time-interval.
+### Generate a summary of your solved problems sorted by last accepted submission.
 ### Re-attempt problems solved long ago or with low accuracy. 
 ###### Spaced-repetition is the best way to learn. Re-attempt solved problems for better understanding.
 
