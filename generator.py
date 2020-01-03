@@ -1,7 +1,5 @@
-# coding:utf-8
-#
 # Author: HUANG XUAN KUN<hxk123123123@gmail.com>
-# Github: https://github.com/bonfy
+# Github: https://github.com/HUANGXUANKUN
 # Repo:   https://github.com/HUANGXUANKUN/leetcode-summary-generator
 # Usage:  Leetcode summary generator for revision
 #
@@ -216,9 +214,9 @@ class Leetcode:
 #### Re-attempt solved problems for better understanding.
 Update time:  {tm}
 Auto created by [leetcode_generate](https://github.com/HUANGXUANKUN/leetcode-summary-generator)
-I have solved *{num_solved}* / *{num_total}* problems
-If you want to use this tool please follow this [User Guide](https://github.com/HUANGXUANKUN/leetcode-summary-generatorREADME.md)
-If you have any question, please give me an [issue](https://github.com/HUANGXUANKUN/leetcode-summary-generator/issues).
+I have solved *{num_solved}* / *{num_total}* unlocked problems
+To use this tool, click [User Guide](https://github.com/HUANGXUANKUN/leetcode-summary-generator/user-guide.md)
+To raise an issue, click [issue](https://github.com/HUANGXUANKUN/leetcode-summary-generator/issues)
                 ''' \
             .format(
             tm=time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())),
@@ -247,7 +245,7 @@ If you have any question, please give me an [issue](https://github.com/HUANGXUAN
                     description = problem['title']
 
                     # set accuracy image
-                    accuracy_img = ' :smile:'
+                    accuracy_img = ''
                     if problem['accuracy'] < 50:
                         accuracy_img = ' :pout:'
 
