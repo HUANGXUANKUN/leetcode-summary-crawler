@@ -231,7 +231,7 @@ To raise an issue, click [issue](https://github.com/HUANGXUANKUN/leetcode-summar
         for title in TIME_TITLES:
             list = self.sort_dict[title]
             if len(list) > 0:
-                md += '|**:calendar:**|**{}**|\n'.format(title)
+                md += '|**:calendar:**|**{}**|**:calendar:**|**:calendar:**|**:calendar:**|\n'.format(title)
                 for problem in list:
                     # set difficutly output
                     difficulty = difficulty=problem['difficulty']
@@ -239,13 +239,13 @@ To raise an issue, click [issue](https://github.com/HUANGXUANKUN/leetcode-summar
                     if difficulty == 1:
                         difficulty_str = 'Easy'
                     elif difficulty == 2:
-                        difficulty_str = 'Medium'
+                        difficulty_str = 'Med'
                     else:
                         difficulty_str = 'Hard'
                     description = problem['title']
 
                     # set accuracy image
-                    accuracy_img = ''
+                    accuracy_img = ' :heavy_check_mark: '
                     if problem['accuracy'] < 50:
                         accuracy_img = ' :pout:'
 
@@ -266,7 +266,7 @@ To raise an issue, click [issue](https://github.com/HUANGXUANKUN/leetcode-summar
                         difficulty=difficulty_str,
                         accuracy=str(int(problem['accuracy'])) + '%' + accuracy_img
                     )
-                md += '||||||\n'
+                md += '||||||\n||||||\n'
 
 
         with open('README.md', 'w') as f:
