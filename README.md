@@ -8,16 +8,7 @@
 
 1. Install `python 3.6` and above
 
-2. Install packages `selenium` and `requests`
-
-   - Option 1, run `pip install -r requirements.txt`, or
-
-   - Option 2,
-
-     ```bash
-     pip install selenium
-     pip install requests
-     ```
+2. Install packages `selenium` and `requests`, you may run `pip install -r requirements.txt`
 
 ## How to use
 1. In `config.cfg`, enter Leetcode username and password 
