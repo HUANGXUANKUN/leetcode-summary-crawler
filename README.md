@@ -18,7 +18,7 @@
 3. Run `python generator.py`
 
 ## What you might need
--  [typora](https://www.typora.io/): A extremely lightweight markdown reader
+-  [typora](https://www.typora.io/): A lightweight markdown reader
 
 # Leetcode Summary Sample
 
