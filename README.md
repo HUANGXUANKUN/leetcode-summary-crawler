@@ -13,7 +13,7 @@
 ## How to use
 1. In `config.cfg`, enter Leetcode username and password 
 
-2. Download [chromedriver.exe](https://chromedriver.chromium.org/downloads) and place in the sub-directory `drivers`
+2. Download [chromedriver.exe](https://chromedriver.chromium.org/downloads) and place it in the sub-directory `/drivers`
 
 3. Run `python generator.py`
 
